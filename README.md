@@ -1,3 +1,7 @@
+# CheckMk 2.3 and 2.4 support
+* Monitoring rules must be opened and saved again via the Setup GUI.
+* Agent bakery deployment rules must also be reviewed and saved to ensure correct migration.
+
 # fail2ban plugin for check_mk
 This plugin should replace the fail2ban plugin from notes.benv.junerules.com/fail2ban/.
 The original plugin does not work correctly with check_mk 2.0. So this a completly new write.
