@@ -13,3 +13,5 @@ resurect this plugins.
 Added Various improvements #12 from jplitza (FreiFunk Bremen)
 Cleanup bakery support based on #9 from agabellini
 
+### Version 2.3.1 (09.06.2025)
+Support for the new API format
