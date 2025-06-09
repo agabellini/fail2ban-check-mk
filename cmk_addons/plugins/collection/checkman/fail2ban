@@ -1,0 +1,18 @@
+title: Fail2ban
+agents: linux
+catalog: app/fail2ban
+author: Jens Kuehnel <fail2ban-checkmk@jens.kuehnel.org>, Andrea Gabellini <andrea.gabellini@telecomitalia.sm>
+license: GPL
+distribution: check_mk
+description:
+ Monitor the number of failed and banned IPs from a fail2ban installation.
+
+perfdata:
+ The failed and banned IPs are graphed, both current and total.
+
+item:
+ For every fail2ban jail an extra check item is created.
+
+discovery:
+ Automatic inventory is supported. Install the agent and the rest is done automatically.
+ Warning and critical levels can be configured via WATO for current failed and banned IPs.
