@@ -60,13 +60,15 @@ def migrate_fail2ban_bakery(value):
 
     match value:
         case None:
-            result = {'deployment': ('do_not_deploy', None)}
-        case {'interval': interval} if isinstance(interval, (int, float)):
-            result = {'deployment': ('cached', float(interval))}
+            return {"deployment": ("do_not_deploy", None)}
+        case {"interval": interval} if isinstance(interval, (int, float)):
+            return {"deployment": ("cached", float(interval))}
+        case {"activated": True}:
+            return {"deployment": ("sync", None)}
+        case {"activated": False}:
+            return {"deployment": ("do_not_deploy", None)}
         case {} if not value:
-            # Legacy ambiguous case -> treat as "do_not_deploy"
-            #result = {'deployment': ('sync', None)}
-            result = {'deployment': ('do_not_deploy', None)}
+            return {"deployment": ("do_not_deploy", None)}
         case _:
             raise ValueError(f"Unsupported value format: {value}")
 
